@@ -18,6 +18,7 @@ use Nipe::Stop;
 use Nipe::Start;
 use Nipe::CheckIp;
 use Nipe::Functions;
+use Nipe::Nodes;
 
 sub main {
 	my $command = $ARGV[0];
@@ -33,6 +34,16 @@ sub main {
 
 		case "status" {
 			Nipe::CheckIp -> new();
+		}
+
+		case "nodes" {
+			my $subCommand = $ARGV[1];
+			switch ($subCommand) {
+				case "list" {
+					Nipe::Nodes -> list_nodes();
+				}
+			}
+			return 0;
 		}
 
 		case "restart" {
