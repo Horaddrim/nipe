@@ -37,8 +37,8 @@ sub main {
 		}
 
 		case "nodes" {
-			my $subCommand = $ARGV[1];
-			switch ($subCommand) {
+			my $sub_command = $ARGV[1];
+			switch ($sub_command) {
 				case "list" {
 					Nipe::Nodes -> list_nodes();
 				}
